@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS HANDSON 11</title>
+</head>
+
+<body>
+
+    <h1> JS Function</h1>
+    <hr>
+
+    <div>Q1.Create one function with zero parameter having a console statement;</div>
+    <div>
+        Answer →
+        <pre>
+        → const example = function (){
+            let x ='this is console';
+            console.log(x);
+        }
+        example();
+        </pre>
+    </div>
+    <div id="zero">→ value printed in console At line no.5</div>
+    <hr>
+
+    <div>
+        Q2.Create one function which takes two values as a parameter and print the sum of them as "Sum of 3, 4 is 7"
+    </div>
+    <div>Answer →
+        <pre>
+            const add = function (a,b){
+                return a+b;
+            }
+            console.log(add(3+4));
+        </pre>
+    </div>
+    <div>
+        → value printed in console At line no.14
+    </div>
+    <hr>
+
+    <div>
+        Q3. Create one arrow function
+    </div>
+    <div>
+        Answer →
+        <pre>
+        → const Multi = (a,b) => a*b;
+                const result = Multi(12,5);
+            console.log(result);
+
+        </pre>
+    </div>
+    <div>
+        → value printed in console At line no.19
+    </div>
+    <hr>
+
+    <div>Q4.Print output:
+        <pre> var x = 21;
+        var girl = function () {
+            console.log(x);
+            var x = 20;
+        };
+        girl ();
+        </pre>
+    </div>
+    <div>
+        → [Output:Undefined]value printed in console At line no.24
+    </div>
+    <div>
+        Reason: The output value is Undefined because when the execution context was running ,before it could
+        assign value to x, the x was called(console.log x).
+
+        <hr>
+
+        <div>
+            Q5. "Print output:
+            <pre>var x = 21;
+            girl ();
+            console.log(x)
+            function girl() {
+                console.log(x);
+                var x = 20;
+            };"
+            </pre>
+        </div>
+        <div>
+            →[Output:21].value printed in console At line no.32
+            <div>
+                Reason: In the process of process of memory allocation the function was skipped after var x = 21, and
+                then
+                there was console.log(x), So the execution context took the first declared value of x and printed in the
+                output.
+            </div>
+        </div>
+        <hr>
+
+        <div>
+            Q6. "Print output
+            <pre>
+
+    var x = 21;
+    a();
+    b();
+
+    function a() {
+    
+    x = 20;
+    console.log(x);
+    };
+    function b() {
+    
+        x = 40;
+    console.log(x);
+    };"
+    </pre>
+        </div>
+        <div>→[Output:20,40].value printed in console At line no.47 and
+            52</div>
+        <div>Reason: In the M.A the x value printed as 21, then in the a function where the x was declared 20 before
+            console.log(x) so, the after execution of function scope the value of x which was 20,
+            and it was near so it printed x = 20. Same with the case of 40.
+        </div>
+        <hr>
+
+
+        <div>Q7.Write a function that accepts parameter n and returns factorial of n</div>
+        <div>
+            <pre>function factorial(n) {
+        if (n === 0) return 1;
+        return n * factorial(n - 1);
+      }
+        let num = 6;
+      console.log(factorial(num))</pre>
+        </div>
+        <div>
+            → value printed in console At line no.62 i.e 720
+        </div>
+        <hr>
+
+        <h1> Next Day </h1>
+        <hr>
+
+        <div>Q1."Guess the Output
+
+            <pre>function FindSum(a, b){
+            return a + b;
+        }
+        
+        function DisplayData(data, batch){
+            console.log(`i am from ${data} and My batch is EA${batch}`)
+        }
+        
+        DisplayData(""PrepBytes"", FindSum(10, 9));"</pre>
+        </div>
+
+        <div>
+            → i am from PrepBytes and my batch is EA19
+        </div>
+
+        <hr>
+
+        <div>Q2.
+            <pre>
+    "Guess the output
+
+    Abc();
+    const Abc = function(){
+    let value = 20;
+    console.log(value);
+    }"
+</pre>
+        </div>
+        <div>→[Output:Referance Error].
+            <div>
+                → value printed in console At line no 72.(it is commited in js that's why output will not be
+                showned)
+            </div>
+            <div>
+                →Reason: In function Execution Context the variable is declared
+                inside a function, and function is called before that's why it will show Referance Error.
+            </div>
+        </div>
+        <hr>
+
+        <div>
+            Q3.
+            <pre>
+            "Guess the output
+
+        var a = 10;
+        (function (){
+            console.log(a);
+            var a = 20;
+        })();"
+        </pre>
+        </div>
+
+        <div>
+            →It Will be Undefined
+            <div>
+                → value printed in console At line no.87
+            </div>
+            <div>
+                →Reason: Before declaration in memory allocation
+                the a value wants to be printed.
+            </div>
+        </div>
+        <hr>
+
+        <div>Q4.
+            <pre>
+                "Guess the Output
+            const greet =  function(name){
+                return function(m){
+                
+                    console.log(`Hi!! ${name}, ${m}`);
+                }
+            }
+            
+            const greet_message = greet('EA19');
+            greet_message(""Welcome To PrepBytes"")"
+            </pre>
+        </div>
+
+        <div>
+            → The output will be "Hi!! EA19 Welcome to PrepBytes"
+            <div>
+                → value printed in console At line no.95
+            </div>
+            <div>
+                →Reason In memory allocation
+                function will be skipped, it will directly to come const greet_message, in this the greet is assigned
+                with argument
+                EA19, which will make connection to greet variable in const, and name will be printed as EA19. Same goes
+                to function of m.
+            </div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
